@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encuesta de Hábitos Energéticos</title>
-    <!-- Bootstrap 5.3.3 CSS CDN -->
+    <title>Encuesta de Hábitos Energéticos</title>    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 </head>
 <body class="container py-3">
-
-    <!-- Encabezado con Bootstrap -->
+    
     <header class="p-4 mb-4 bg-primary text-white rounded">
         <h1>Encuesta de Hábitos de Consumo</h1>
         <p>Ayúdanos a evaluar el comportamiento energético en el hogar frente a la crisis actual.</p>
-        
-        <!-- Menú de navegación actualizado -->
+                
         <nav class="nav nav-pills">
             <a class="nav-link text-white" href="index.html">Inicio</a>
             <a class="nav-link text-white" href="equipos.html">Equipos de mi casa</a>
@@ -25,48 +22,53 @@
     </header>
 
     <main>
-        <!-- Componente Bootstrap extra: Alerta informativa -->
+        
         <div class="alert alert-info shadow-sm" role="alert">
             <strong>Aviso importante:</strong> Esta encuesta recopila datos estadísticos anónimos para proponer mejores prácticas de ahorro familiar.
         </div>
 
-        <!-- Formulario con method="get" -->
+        
         <form action="encuesta.html" method="get">
 
-            <!-- Fieldset 1: Datos generales del encuestado -->
+            
+            <section class="mb-4">
+                <h2 class="visually-hidden">Datos personales</h2>
             <fieldset class="border rounded p-4 mb-4 bg-light shadow-sm">
                 <legend class="float-none w-auto px-3 fs-5 fw-bold text-primary">1. Datos Personales</legend>
 
-                <!-- Campo text (Obligatorio) -->
+                
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre completo:</label>
                     <input class="form-control" type="text" id="nombre" name="nombre" required placeholder="Escriba su nombre">
                 </div>
 
-                <!-- Campo email (Obligatorio) -->
+                
                 <div class="mb-3">
                     <label for="correo" class="form-label">Correo electrónico:</label>
                     <input class="form-control" type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com">
                 </div>
 
-                <!-- Campo number con min y max (Obligatorio) -->
+                
                 <div class="mb-3">
                     <label for="personas" class="form-label">Número de personas que viven en casa:</label>
                     <input class="form-control" type="number" id="personas" name="personas" min="1" max="15" required>
                 </div>
             </fieldset>
+            </section>
 
-            <!-- Fieldset 2: Hábitos de consumo y equipos -->
+            
+            <section class="mb-4">
+                <h2 class="visually-hidden">Hábitos de consumo energético</h2>
             <fieldset class="border rounded p-4 mb-4 bg-light shadow-sm">
                 <legend class="float-none w-auto px-3 fs-5 fw-bold text-primary">2. Hábitos de Consumo Energético</legend>
 
-                <!-- Campo range (Componente Bootstrap form-range) -->
+                
                 <div class="mb-3">
                     <label for="conciencia" class="form-label">¿Qué tanta conciencia de ahorro tiene su familia (de 1 a 10)?</label>
                     <input class="form-range" type="range" id="conciencia" name="conciencia" min="1" max="10" value="5">
                 </div>
 
-                <!-- Campo select (Componente Bootstrap form-select) -->
+                
                 <div class="mb-3">
                     <label for="estrato" class="form-label">Estrato socioeconómico de la vivienda:</label>
                     <select class="form-select" id="estrato" name="estrato" required>
@@ -79,7 +81,7 @@
                     </select>
                 </div>
 
-                <!-- Campo radio (Selección única) -->
+                
                 <div class="mb-3">
                     <label class="form-label d-block">¿Deja con frecuencia cargadores enchufados sin usar?</label>
                     <div class="form-check form-check-inline">
@@ -92,33 +94,36 @@
                     </div>
                 </div>
 
-                <!-- Campo checkbox (Casilla de verificación) -->
+                
                 <div class="mb-3 form-check">
                     <input class="form-check-input" type="checkbox" id="bombillos" name="bombillos_led" value="true">
                     <label class="form-check-label" for="bombillos">Utiliza bombillos LED o ahorradores en toda la casa</label>
                 </div>
 
-                <!-- Campo textarea (Texto multilínea) -->
+                
                 <div class="mb-3">
                     <label for="comentarios" class="form-label">Comentarios o medidas adicionales que implementan:</label>
                     <textarea class="form-control" id="comentarios" name="comentarios" rows="3" placeholder="Escriba aquí sus observaciones..."></textarea>
                 </div>
             </fieldset>
+            </section>
 
-            <!-- Componente Bootstrap extra: Tarjeta informativa con botones de acción dentro -->
+            
+            <section>
             <div class="card mb-4 border-primary shadow-sm">
                 <div class="card-body text-center">
-                    <h5 class="card-title text-primary">Finalizar Encuesta</h5>
+                    <h2 class="card-title text-primary fs-5">Finalizar Encuesta</h2>
                     <p class="card-text text-muted">Haga clic en enviar para registrar sus respuestas a través del método GET.</p>
                     <button class="btn btn-primary px-4" type="submit">Enviar Encuesta</button>
                     <button class="btn btn-secondary px-4" type="reset">Borrar Datos</button>
                 </div>
             </div>
+            </section>
 
         </form>
     </main>
 
-    <!-- Pie de página -->
+    
     <footer class="mt-4 text-muted text-center">
         <hr>
         <p>Ingeniería Web I · IU Digital de Antioquia · 2026-2</p>
